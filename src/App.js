@@ -50,7 +50,6 @@ const headerVariants = {
   },
 };
 
-
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation(); 
@@ -62,22 +61,22 @@ function App() {
   }, []);
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
+    const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    };
 
-  const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      // Placeholder: Integrate with EmailJS or backend here
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000); // Reset after 3s
-      setFormData({ name: '', email: '', message: '' });
+        // Placeholder: Integrate with EmailJS or backend here
+        console.log('Form submitted:', formData);
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 3000); // Reset after 3s
+        setFormData({ name: '', email: '', message: '' });
     }
-  };
+    };
 
   // Smooth scroll handler
   const scrollToSection = (sectionId) => {
@@ -160,6 +159,212 @@ function App() {
                 </motion.div>
               </section>
               {/* You can put any other shared content here */}
+              <section id="about" className="section">
+                  <motion.h2
+                    variants={headerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
+                    Unlocking Exponential Growth
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    VC Capital is not just an investment firm; we are a dedicated growth partner. We provide the capital, connections, and strategic expertise required to scale groundbreaking technologies into global market leaders. Our focus is strictly on ventures that promise massive positive disruption.
+                  </motion.p>
+                  
+                  {/* Animated Stats */}
+                  <motion.div 
+                    className="stats"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                  >
+                    <motion.div className="stat" variants={itemVariants}>
+                      $500M+ Assets Under Management
+                    </motion.div>
+                    <motion.div className="stat" variants={itemVariants}>
+                      4.2x Average ROI
+                    </motion.div>
+                    <motion.div className="stat" variants={itemVariants}>
+                      20+ Active Disruptors Funded
+                    </motion.div>
+                  </motion.div>
+              </section>
+              <section id="portfolio" className="section">
+                <motion.h2
+                  variants={headerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                >
+                  Our Disruptive Portfolio
+                </motion.h2>
+                <motion.div
+                  className="portfolio-grid"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                >
+                  {[
+                    {
+                      title: "TechStartup AI",
+                      desc: "AI-driven analytics platform revolutionizing data insights.",
+                      // 👈 USE THE IMPORTED VARIABLE HERE
+                      imageUrl: projectAImage,
+                    },
+                    {
+                      title: "GreenEnergy Co.",
+                      desc: "Sustainable energy solutions for a cleaner planet.",
+                      // 👈 USE THE IMPORTED VARIABLE HERE
+                      imageUrl: projectBImage,
+                    },
+                    {
+                      title: "FinTech Innovate",
+                      desc: "Blockchain-based financial services for the masses.",
+                      // 👈 USE THE IMPORTED VARIABLE HERE
+                      imageUrl: projectCImage,
+                    },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="portfolio-item"
+                      variants={itemVariants}
+                      whileHover={{
+                        y: -15,
+                        scale: 1.07,
+                        boxShadow: "0 25px 45px rgba(0,0,0,0.25)",
+                        rotate: -1,
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      style={{ backgroundImage: `url(${item.imageUrl})` }}
+                    >
+                      <div className="portfolio-overlay">
+                        <h3>{item.title}</h3>
+                        <p>{item.desc}</p>
+                        <button className="learn-more-btn">VIEW CASE STUDY</button>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </section>
+              <section id="team" className="section">
+                <motion.h2
+                  variants={headerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                >
+                  Meet the Visionaries
+                </motion.h2>
+                <motion.div
+                  className="team-grid"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                >
+                  {[
+                    { name: 'Jane Doe', role: 'Founding Partner – 15+ years in VC and tech investments.' },
+                    { name: 'John Smith', role: 'Managing Director – Expertise in SaaS and fintech.' }
+                  ].map((member, index) => (
+                    <motion.div
+                      key={index}
+                      className="team-member"
+                      variants={itemVariants}
+                      whileHover={{ y: -10, scale: 1.05, boxShadow: '0 20px 40px rgba(30, 64, 175, 0.25)', rotate: 2 }} // Bold hover
+                      transition={{ duration: 0.4 }}
+                    >
+                      <h3>{member.name}</h3>
+                      <p>{member.role}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </section>
+              <section id="contact" className="section">
+                <motion.h2
+                  variants={headerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                >
+                  Ready to Launch?
+                </motion.h2>
+                <form className="contact-form" onSubmit={handleSubmit}>
+                  <motion.input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    viewport={{ once: true }}
+                  />
+                  <motion.input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  />
+                  <motion.textarea
+                    name="message"
+                    placeholder="Your Message"
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  ></motion.textarea>
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.07, rotate: 1 }} // Bold button flourish
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: 'spring', stiffness: 300, delay: 0.4 }}
+                  >
+                    SEND A BOLD MESSAGE 🚀
+                  </motion.button>
+                </form>
+                <AnimatePresence>
+                  {isSubmitted && (
+                    <motion.p
+                      className="success-message"
+                      initial={{ opacity: 0, scale: 0.5, rotateX: 90 }}
+                      animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+                      exit={{ opacity: 0, scale: 0.5, rotateX: 90 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      🎉 Message sent successfully! We'll get back to you soon.
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+                <motion.p
+                  className="contact-info"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  Email: info@vccapital.com | Phone: (123) 456-7890
+                </motion.p>
+              </section>
             </motion.div>
           } />
 
@@ -176,212 +381,16 @@ function App() {
       </AnimatePresence>
 
       {/* About Section */}
-      <section id="about" className="section">
-        <motion.h2
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          Unlocking Limitless Potential
-        </motion.h2>
-        <motion.p
-          variants={itemVariants} // Reusing the spring-in variant for the paragraph
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          Founded in 2020, VC Capital is a leading venture capital firm dedicated to fueling high-growth startups. With a portfolio exceeding $500M in assets under management, we partner with visionary founders to turn ideas into global successes.
-        </motion.p>
-        <motion.div
-          className="stats"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {['50+ Investments', '10+ Exits', '$500M+ AUM'].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="stat"
-              variants={itemVariants}
-              whileHover={{ scale: 1.1, rotate: 2 }} // Bold hover rotation
-            >
-              {stat}
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="section">
-        <motion.h2
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          Our Disruptive Portfolio
-        </motion.h2>
-        <motion.div
-          className="portfolio-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {[
-            { 
-              title: 'TechStartup AI', 
-              desc: 'AI-driven analytics platform revolutionizing data insights.',
-              // 👈 USE THE IMPORTED VARIABLE HERE
-              imageUrl: projectAImage
-            },
-            { 
-              title: 'GreenEnergy Co.', 
-              desc: 'Sustainable energy solutions for a cleaner planet.',
-              // 👈 USE THE IMPORTED VARIABLE HERE
-              imageUrl: projectBImage
-            },
-            { 
-              title: 'FinTech Innovate', 
-              desc: 'Blockchain-based financial services for the masses.',
-              // 👈 USE THE IMPORTED VARIABLE HERE
-              imageUrl: projectCImage
-            }
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              className="portfolio-item"
-              variants={itemVariants}
-              whileHover={{ y: -15, scale: 1.07, boxShadow: '0 25px 45px rgba(0,0,0,0.25)', rotate: -1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              style={{ backgroundImage: `url(${item.imageUrl})` }}
-            >
-              <div className="portfolio-overlay">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-                <button className="learn-more-btn">VIEW CASE STUDY</button>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      
 
       {/* Team Section */}
-      <section id="team" className="section">
-        <motion.h2
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          Meet the Visionaries
-        </motion.h2>
-        <motion.div
-          className="team-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {[
-            { name: 'Jane Doe', role: 'Founding Partner – 15+ years in VC and tech investments.' },
-            { name: 'John Smith', role: 'Managing Director – Expertise in SaaS and fintech.' }
-          ].map((member, index) => (
-            <motion.div
-              key={index}
-              className="team-member"
-              variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.05, boxShadow: '0 20px 40px rgba(30, 64, 175, 0.25)', rotate: 2 }} // Bold hover
-              transition={{ duration: 0.4 }}
-            >
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+      
 
       {/* Contact Section */}
-      <section id="contact" className="section">
-        <motion.h2
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          Ready to Launch?
-        </motion.h2>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <motion.input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          />
-          <motion.input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          />
-          <motion.textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          ></motion.textarea>
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.07, rotate: 1 }} // Bold button flourish
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 300, delay: 0.4 }}
-          >
-            SEND A BOLD MESSAGE 🚀
-          </motion.button>
-        </form>
-        <AnimatePresence>
-          {isSubmitted && (
-            <motion.p
-              className="success-message"
-              initial={{ opacity: 0, scale: 0.5, rotateX: 90 }}
-              animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-              exit={{ opacity: 0, scale: 0.5, rotateX: 90 }}
-              transition={{ duration: 0.5 }}
-            >
-              🎉 Message sent successfully! We'll get back to you soon.
-            </motion.p>
-          )}
-        </AnimatePresence>
-        <motion.p
-          className="contact-info"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          Email: info@vccapital.com | Phone: (123) 456-7890
-        </motion.p>
-      </section>
+      
 
       {/* Footer */}
       <motion.footer
