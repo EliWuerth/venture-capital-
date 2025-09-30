@@ -6,11 +6,12 @@
 
 /* Define CSS Variables for BOLDNESS */
 :root {
-  --primary-blue: #4000FF; /* Deep, professional blue */
+  --primary-blue: #a27ae6; /* Deep, professional blue */
   --secondary-red: #FFC000; /* Vibrant, bold accent color */
   --light-bg: #f8fafc; /* Very light background, almost white */
   --section-bg: #F5F0FF; /* NEW: Light gray-blue for section contrast */
   --dark-text: #1a1a2e;
+  --bold-text: #0000;
   --transition-speed: 0.4s;
 }
 
@@ -32,7 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
-  background: var(--light-bg);
+  background: var(--section-bg);
   backdrop-filter: blur(15px);
   box-shadow: 0 4px 30px rgba(0,0,0,0.1);
   position: fixed;
@@ -67,7 +68,7 @@ body {
 }
 
 .nav-brand:hover {
-  color: var(--secondary-red);
+  color: var(--primary-blue);
 }
 
 .nav-links {

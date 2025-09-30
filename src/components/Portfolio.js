@@ -34,7 +34,7 @@ const OtherItems = portfolioItems.filter(item => !item.featured);
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="section" style={{ paddingTop: '4rem' }}>
+    <section id="portfolio" className="section" style={{ paddingTop: '8rem',background: 'var(--section-bg)' }}>
         <motion.h2
             variants={headerVariants}
             initial="hidden"
@@ -72,13 +72,10 @@ const Portfolio = () => {
                 padding: '3rem',
                 boxShadow: '0 20px 50px rgba(0,0,0,0.3)',
                 border: '5px solid var(--secondary-color)',
-                maxWidth: '1200px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
             }}
         >
             <div className="portfolio-overlay" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.8))', padding: '3rem', borderRadius: '15px' }}>
-                <span style={{ color: 'var(--secondary-color)', fontWeight: 800, fontSize: '1rem', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'block' }}>
+                <span style={{ color: 'var(--secondary-red)', fontWeight: 800, fontSize: '1.2rem', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'block' }}>
                     FEATURED PROJECT: {FeaturedItem.tag}
                 </span>
                 <h3 style={{ fontSize: '3rem', color: 'white', marginBottom: '0.5rem' }}>{FeaturedItem.title}</h3>
@@ -88,7 +85,7 @@ const Portfolio = () => {
         </motion.div>
 
 
-        <h3 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary-color)', marginBottom: '3rem' }}>
+        <h3 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary-blue)',paddingTop: '20rem', marginBottom: '3rem' }}>
             Core Portfolio Investments
         </h3>
 
@@ -108,7 +105,7 @@ const Portfolio = () => {
               transition={{ type: 'spring', stiffness: 300 }}
               style={{ backgroundImage: `url(${item.imageUrl})`, height: '300px' }}
             >
-              <div className="portfolio-overlay" style={{ marginTop: 'auto', padding: '2rem' }}>
+              <div className="portfolio-overlay" style={{ padding: '2rem' }}>
                 <span style={{ color: 'var(--secondary-color)', fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.5rem', display: 'block' }}>{item.tag}</span>
                 <h3 style={{ color: 'white' }}>{item.title}</h3>
                 <p style={{ fontSize: '1rem' }}>{item.desc}</p>

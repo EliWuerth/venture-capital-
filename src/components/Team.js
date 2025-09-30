@@ -28,7 +28,7 @@ const Leads = teamMembers.filter(m => m.type === 'lead');
 
 const Team = () => {
   return (
-    <section id="team" className="section" style={{ paddingTop: '4rem' }}>
+    <section id="team" className="section" style={{ paddingTop: '8rem' }}>
         <motion.h2
             variants={headerVariants}
             initial="hidden"
@@ -47,7 +47,7 @@ const Team = () => {
         </motion.p>
         
         {/* Partnership Tier */}
-        <h3 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--secondary-color)', marginBottom: '3rem' }}>
+        <h3 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--secondary-red)', marginBottom: '3rem' }}>
             Founding & Managing Partners
         </h3>
         <motion.div
@@ -63,20 +63,20 @@ const Team = () => {
               className="team-member"
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
-              style={{ textAlign: 'left', padding: '3rem', borderLeft: '5px solid var(--secondary-color)', borderBottom: 'none' }}
+              style={{ textAlign: 'left', padding: '3rem', borderLeft: '5px solid var(--secondary-red)', borderBottom: 'none' }}
             >
-              <h3 style={{ color: 'var(--primary-color)' }}>{member.name}</h3>
-              <p style={{ color: 'var(--secondary-color)', fontWeight: 700, margin: '0.5rem 0' }}>{member.role}</p>
+              <h3 style={{ color: 'black' }}>{member.name}</h3>
+              <p style={{ color: 'var(--dark-text)', fontWeight: 700, margin: '0.5rem 0' }}>{member.role}</p>
               <p style={{ fontSize: '1rem', opacity: 0.8, marginBottom: '1rem' }}>{member.bio}</p>
               <p style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--dark-text)' }}>
-                Expertise: <span style={{ color: 'var(--secondary-color)' }}>{member.expertise}</span>
+                Expertise: <span style={{ color: 'var(--primary-blue)' }}>{member.expertise}</span>
               </p>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Lead Tier */}
-        <h3 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary-color)', marginBottom: '3rem' }}>
+        <h3 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--secondary-red)', marginBottom: '3rem' }}>
             Investment & Operational Leads
         </h3>
         <motion.div
@@ -92,7 +92,7 @@ const Team = () => {
               className="team-member"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
-              style={{ textAlign: 'center', padding: '2rem', borderBottom: '5px solid var(--primary-color)', borderLeft: 'none', backgroundColor: 'var(--section-bg)' }}
+              style={{ textAlign: 'center', padding: '2rem', borderBottom: '5px solid var(--primary-blue)', borderLeft: 'none' }}
             >
               <h3 style={{ color: 'var(--dark-text)', fontSize: '1.4rem' }}>{member.name}</h3>
               <p style={{ color: 'var(--primary-color)', fontWeight: 700, margin: '0.5rem 0' }}>{member.role}</p>

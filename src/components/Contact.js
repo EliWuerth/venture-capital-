@@ -27,7 +27,7 @@ const Contact = () => {
   };
     
   return (
-    <section id="contact" className="section" style={{ paddingTop: '4rem' }}>
+    <section id="contact" className="section" style={{ paddingTop: '8rem'}}>
         <motion.h2
             variants={headerVariants}
             initial="hidden"
