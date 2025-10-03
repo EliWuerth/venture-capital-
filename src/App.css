@@ -48,27 +48,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--secondary-red);
   max-width: 1200px;
   width: 100%;
 }
 
 .navbar.scrolled {
   background: #0f172a;
-  color: var(--secondary-red);
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   padding: 0.6rem 2rem;
+  border-bottom: 2px solid var(--secondary-red);
 }
 
-.nav-brand {
+.nav-brand, .nav-brand a {
   font-size: 1.7rem;
   font-weight: 900;
   color: var(--secondary-red);
   cursor: pointer;
+  text-decoration: none;
 }
 
-.nav-brand:hover {
+.nav-brand:hover, .nav-brand a:hover {
   color: var(--primary-blue);
+  text-decoration: none;
+  text-shadow: 0 0 5px rgba(112, 62, 187, 0.5);
 }
 
 .nav-links {
@@ -91,7 +93,7 @@ body {
 
 .nav-links a:hover {
   color: var(--primary-blue);
-  text-shadow: 0 0 5px rgba(30, 64, 175, 0.5);
+  text-shadow: 0 0 5px rgba(112, 62, 187, 0.5);
 }
 
 /* Hero - More Contrast, Bolder CTA */
@@ -195,15 +197,9 @@ body {
 /* Apply the light background to the About and Team sections */
 #about, #team, #contact {
   background-color: var(--section-bg); 
-  /* The 100vw hack is removed! */
-  /* width: 100vw;  */
-  /* margin: 0 calc(50% - 50vw); */ 
   box-shadow: inset 0 5px 10px rgba(0,0,0,0.05), inset 0 -5px 10px rgba(0,0,0,0.05); 
 }
 
-/* We only want content centered, so reset max-width for internal content 
- (Keep this rule, as it correctly centers the content within the colored section)
-*/
 #about > *, #team > *, #contact > * { 
   max-width: 1200px; 
   margin-left: auto;
@@ -214,8 +210,6 @@ body {
 #portfolio {
   background-color: white;
 }
-
-/* ------------------------------------------------------------------ */
 
 .section h2 {
   font-size: 3.2rem;
@@ -288,10 +282,6 @@ body {
   cursor: pointer;
   border: 4px solid white; 
 }
-/* This is a placeholder for images to show the vibrant style */
-/* #portfolio .portfolio-item:nth-child(1) { background-image: linear-gradient(135deg, #f97316, #ef4444); }
-#portfolio .portfolio-item:nth-child(2) { background-image: linear-gradient(135deg, #1e40af, #3b82f6); }
-#portfolio .portfolio-item:nth-child(3) { background-image: linear-gradient(135deg, #10b981, #059669); }*/
 
 .portfolio-item:hover {
   box-shadow: 0 30px 60px rgba(0,0,0,0.3);
@@ -513,9 +503,6 @@ body {
   padding: 4rem 2rem;
   transition: all 0.5s ease;
   border-top: 5px solid var(--secondary-red);
-  /* 👈 DELETE: The full-width hack is removed */
-  /* width: 100vw; 
-  margin: 0 calc(50% - 50vw); */
 }
 
 .footer:hover {

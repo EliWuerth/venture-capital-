@@ -88,23 +88,23 @@ function App() {
       {/* 1. Navigation (Updated with <Link>) */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-content-wrapper">
-            <motion.div className="nav-brand" whileHover={{ scale: 1.05 }}>
-              <Link to="/">VC CAPITAL</Link> {/* Link to Home */}
-            </motion.div>
-            <ul className="nav-links">
-              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Link to="/about">About</Link> {/* Link to About Page */}
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Link to="/portfolio">Portfolio</Link>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Link to="/team">Team</Link>
-              </motion.li>
-              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Link to="/contact">Contact</Link>
-              </motion.li>
-            </ul>
+          <motion.div className="nav-brand" whileHover={{ scale: 1.05 }}>
+            <Link to="/">VC CAPITAL</Link> {/* Link to Home */}
+          </motion.div>
+          <ul className="nav-links">
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link to="/about">About</Link> {/* Link to About Page */}
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link to="/portfolio">Portfolio</Link>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link to="/team">Team</Link>
+            </motion.li>
+            <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link to="/contact">Contact</Link>
+            </motion.li>
+          </ul>
         </div>
       </nav>
 
